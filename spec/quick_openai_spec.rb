@@ -6,7 +6,7 @@ RSpec.describe QuickOpenai do
   end
 
   it "can use gpt3" do
-    expect("what is two plus two?".gpt3.to_i).to eq(4)
+    expect("What is two plus two, as a single digit?".gpt3.to_i).to eq(4)
   end
 
   it "can use dalle2" do
