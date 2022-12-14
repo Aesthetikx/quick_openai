@@ -7,6 +7,7 @@ module QuickOpenai
   # Your code goes here...
 end
 
+require "down"
 require "ruby/openai"
 require "tempfile"
 
@@ -31,6 +32,16 @@ class String
   end
 
   def dalle2
-    ::Tempfile.new
+    client = OpenAI::Client.new
+
+    response = client.images.generate(
+      parameters: {
+        prompt: self
+      }
+    )
+
+    url = response.dig("data", 0, "url")
+
+    Down.download(url)
   end
 end
