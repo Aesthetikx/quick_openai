@@ -16,7 +16,19 @@ If bundler is not being used to manage dependencies, install the gem by executin
 
 ## Usage
 
-TODO: Write usage instructions here
+Quickly get results from GPT3:
+
+```ruby
+puts "Hello, what is your name?".gpt3
+# => My name is Aileen.
+```
+
+Quickly get images from DALLE2:
+
+```ruby
+tempfile = "a drawing of a cat in a hat".dalle2
+File.open('./cat.png', 'wb') { |f| f.puts tempfile.read }
+```
 
 ## Development
 
