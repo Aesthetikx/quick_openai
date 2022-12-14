@@ -29,6 +29,7 @@ Quickly get images from DALLE2:
 tempfile = "a drawing of a cat in a hat".dalle2
 File.open('./cat.png', 'wb') { |f| f.puts tempfile.read }
 ```
+<img src="https://raw.githubusercontent.com/Aesthetikx/quick_openai/master/.github/cat.png" height=256 width=256></img>
 
 ## Development
 
