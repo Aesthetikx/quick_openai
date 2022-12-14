@@ -1,0 +1,56 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"text-davinci-003","prompt":"What is two plus two, as a single
+        digit?"}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer <OPENAI_ACCESS_TOKEN>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 14 Dec 2022 16:17:04 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '266'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - no-cache, must-revalidate
+      Openai-Model:
+      - text-davinci-003
+      Openai-Organization:
+      - user-9xiroj1bjfqshv2vkrsqgkpl
+      Openai-Processing-Ms:
+      - '470'
+      Openai-Version:
+      - '2020-10-01'
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      X-Request-Id:
+      - ec96e7753de9086c8246e8b3f551c5e5
+    body:
+      encoding: UTF-8
+      string: '{"id":"cmpl-6NOjI0ARnb9uS61EaLAwHvjoeqXO1","object":"text_completion","created":1671034624,"model":"text-davinci-003","choices":[{"text":"\n\n4","index":0,"logprobs":null,"finish_reason":"stop"}],"usage":{"prompt_tokens":11,"completion_tokens":3,"total_tokens":14}}
+
+        '
+  recorded_at: Wed, 14 Dec 2022 16:17:04 GMT
+recorded_with: VCR 6.1.0
