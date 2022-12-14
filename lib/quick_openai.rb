@@ -12,13 +12,14 @@ require "ruby/openai"
 require "tempfile"
 
 class String
-  def gpt3
+  def gpt3(**options)
     client = OpenAI::Client.new
 
     response = client.completions(
       parameters: {
         model: "text-davinci-003",
-        prompt: self
+        prompt: self,
+        **options
       }
     )
 
@@ -31,12 +32,13 @@ class String
     text.chomp.strip
   end
 
-  def dalle2
+  def dalle2(**options)
     client = OpenAI::Client.new
 
     response = client.images.generate(
       parameters: {
-        prompt: self
+        prompt: self,
+        **options
       }
     )
 
