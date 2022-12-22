@@ -41,8 +41,18 @@ class String
       }
     )
 
-    url = response.dig("data", 0, "url")
+    results = response["data"]
 
-    Down.download(url)
+    tempfiles = results.map do |result|
+      url = result["url"]
+
+      Down.download(url)
+    end
+
+    if tempfiles.size == 1
+      tempfiles.first
+    else
+      tempfiles
+    end
   end
 end
