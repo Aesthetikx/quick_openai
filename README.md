@@ -48,7 +48,7 @@ You can pass options supported by `ruby-openai` to the convenience methods:
 
 "count to ten in italian".gpt3(model: 'text-ada-001') # Use a different model
 
-"write me an essay on napoleon".gpt3(max_tokens: 2048) # Produce more output
+"write me an essay on napoleon".gpt3(max_tokens: 2048) # Produce more or less output. The default is 2048.
 ```
 
 ## Development
