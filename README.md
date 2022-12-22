@@ -1,4 +1,4 @@
-# QuickOpenai
+# QuickOpenAI
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/quick_openai`. To experiment with that code, run `bin/console` for an interactive prompt.
 
@@ -26,8 +26,9 @@ puts "Hello, what is your name?".gpt3
 Quickly get images from DALLE2:
 
 ```ruby
-tempfile = "a drawing of a cat in a hat".dalle2
-File.open('./cat.png', 'wb') { |f| f.puts tempfile.read }
+"a drawing of a cat in a hat".dalle2.then { |tempfile|
+  File.open('./cat.png', 'wb') { |f| f.puts tempfile.read }
+}
 ```
 <img src="https://raw.githubusercontent.com/Aesthetikx/quick_openai/master/.github/cat.png" height=256 width=256></img>
 
