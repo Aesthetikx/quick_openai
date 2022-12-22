@@ -6,6 +6,7 @@ module QuickOpenAI
       response = QuickOpenAI.client.completions(
         parameters: {
           model: "text-davinci-003",
+          max_tokens: 2048,
           prompt: prompt,
           **options
         }
