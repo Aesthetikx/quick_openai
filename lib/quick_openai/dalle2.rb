@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module QuickOpenAI
   module Dalle2
     def self.dalle2(prompt, **options)

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module QuickOpenAI
   module Gpt3
     def self.gpt3(prompt, **options)
