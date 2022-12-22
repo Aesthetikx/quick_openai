@@ -3,12 +3,14 @@
 module QuickOpenAI
   module Dalle2
     def self.dalle2(prompt, **options)
-      response = QuickOpenAI.client.images.generate(
-        parameters: {
-          prompt: prompt,
-          **options
-        }
-      )
+      parameters = {
+        prompt: prompt,
+        **options
+      }
+
+      response = QuickOpenAI.fetch_response_from_client do |client|
+        client.images.generate(parameters: parameters)
+      end
 
       results = response.fetch("data")
 
@@ -23,8 +25,6 @@ module QuickOpenAI
       else
         tempfiles
       end
-    rescue StandardError
-      raise QuickOpenAI::Error, "Unable to fetch response."
     end
   end
 end

@@ -11,6 +11,20 @@ module QuickOpenAI
   def self.client
     OpenAI::Client.new
   end
+
+  def self.fetch_response_from_client
+    begin
+      response = yield client
+    rescue StandardError
+      raise QuickOpenAI::Error, "Unable to fetch response."
+    end
+
+    if (error = response.dig("error", "message"))
+      raise QuickOpenAI::Error, "Unable to fetch response: #{error}"
+    end
+
+    response
+  end
 end
 
 require "down"

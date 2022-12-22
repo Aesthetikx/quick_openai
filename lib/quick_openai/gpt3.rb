@@ -3,24 +3,22 @@
 module QuickOpenAI
   module Gpt3
     def self.gpt3(prompt, **options)
-      response = QuickOpenAI.client.completions(
-        parameters: {
-          model: "text-davinci-003",
-          max_tokens: 2048,
-          prompt: prompt,
-          **options
-        }
-      )
+      parameters = {
+        model: "text-davinci-003",
+        max_tokens: 2048,
+        prompt: prompt,
+        **options
+      }
+
+      response = QuickOpenAI.fetch_response_from_client do |client|
+        client.completions(parameters: parameters)
+      end
 
       text = response.dig("choices", 0, "text")
 
-      if text.nil? || text.empty?
-        raise QuickOpenAI::Error, "Unable to parse response."
-      end
+      raise QuickOpenAI::Error, "Unable to parse response." if text.nil? || text.empty?
 
       text.chomp.strip
-    rescue StandardError
-      raise QuickOpenAI::Error, "Unable to fetch response."
     end
   end
 end
