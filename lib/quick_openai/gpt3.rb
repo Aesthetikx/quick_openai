@@ -11,13 +11,15 @@ module QuickOpenAI
         }
       )
 
-      choices = response["choices"]
+      text = response.dig("choices", 0, "text")
 
-      return "" unless choices.any?
-
-      text = choices.dig(0, "text")
+      if text.nil? || text.empty?
+        raise QuickOpenAI::Error, "Unable to parse response."
+      end
 
       text.chomp.strip
+    rescue StandardError
+      raise QuickOpenAI::Error, "Unable to fetch response."
     end
   end
 end

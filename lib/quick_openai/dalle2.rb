@@ -10,7 +10,7 @@ module QuickOpenAI
         }
       )
 
-      results = response["data"]
+      results = response.fetch("data")
 
       tempfiles = results.map do |result|
         url = result["url"]
@@ -23,6 +23,8 @@ module QuickOpenAI
       else
         tempfiles
       end
+    rescue StandardError
+      raise QuickOpenAI::Error, "Unable to fetch response."
     end
   end
 end
