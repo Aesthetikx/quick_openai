@@ -5,7 +5,7 @@ require_relative "quick_openai/dalle2"
 require_relative "quick_openai/gpt3"
 require_relative "quick_openai/extensions/string"
 
-module QuickOpenai
+module QuickOpenAI
   class Error < StandardError; end
 
   def self.client
@@ -18,5 +18,5 @@ require "ruby/openai"
 require "tempfile"
 
 class String
-  include QuickOpenai::Extensions::String
+  include QuickOpenAI::Extensions::String
 end

@@ -1,7 +1,7 @@
-module QuickOpenai
+module QuickOpenAI
   module Gpt3
     def self.gpt3(prompt, **options)
-      response = QuickOpenai.client.completions(
+      response = QuickOpenAI.client.completions(
         parameters: {
           model: "text-davinci-003",
           prompt: prompt,

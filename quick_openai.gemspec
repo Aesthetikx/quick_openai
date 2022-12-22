@@ -4,7 +4,7 @@ require_relative "lib/quick_openai/version"
 
 Gem::Specification.new do |spec|
   spec.name = "quick_openai"
-  spec.version = QuickOpenai::VERSION
+  spec.version = QuickOpenAI::VERSION
   spec.authors = ["John DeSilva"]
   spec.email = ["desilvjo@umich.edu"]
 

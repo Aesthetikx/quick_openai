@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-RSpec.describe QuickOpenai do
+RSpec.describe QuickOpenAI do
   it "has a version number" do
-    expect(QuickOpenai::VERSION).not_to be nil
+    expect(QuickOpenAI::VERSION).not_to be nil
   end
 
   it "can use gpt3", :vcr do
