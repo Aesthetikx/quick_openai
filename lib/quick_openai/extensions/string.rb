@@ -6,28 +6,7 @@ module QuickOpenai
       end
 
       def dalle2(**options)
-        client = OpenAI::Client.new
-
-        response = client.images.generate(
-          parameters: {
-            prompt: self,
-            **options
-          }
-        )
-
-        results = response["data"]
-
-        tempfiles = results.map do |result|
-          url = result["url"]
-
-          Down.download(url)
-        end
-
-        if tempfiles.size == 1
-          tempfiles.first
-        else
-          tempfiles
-        end
+        QuickOpenai::Dalle2.dalle2(self, **options)
       end
     end
   end

@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require_relative "quick_openai/version"
+require_relative "quick_openai/dalle2"
 require_relative "quick_openai/gpt3"
 require_relative "quick_openai/extensions/string"
 
