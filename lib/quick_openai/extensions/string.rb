@@ -2,23 +2,7 @@ module QuickOpenai
   module Extensions
     module String
       def gpt3(**options)
-        client = OpenAI::Client.new
-
-        response = client.completions(
-          parameters: {
-            model: "text-davinci-003",
-            prompt: self,
-            **options
-          }
-        )
-
-        choices = response["choices"]
-
-        return "" unless choices.any?
-
-        text = choices.dig(0, "text")
-
-        text.chomp.strip
+        QuickOpenai::Gpt3.gpt3(self, **options)
       end
 
       def dalle2(**options)
