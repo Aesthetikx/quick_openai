@@ -7,6 +7,10 @@ require_relative "quick_openai/extensions/string"
 
 module QuickOpenai
   class Error < StandardError; end
+
+  def self.client
+    OpenAI::Client.new
+  end
 end
 
 require "down"

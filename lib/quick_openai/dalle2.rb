@@ -1,9 +1,7 @@
 module QuickOpenai
   module Dalle2
     def self.dalle2(prompt, **options)
-      client = OpenAI::Client.new
-
-      response = client.images.generate(
+      response = QuickOpenai.client.images.generate(
         parameters: {
           prompt: prompt,
           **options

@@ -1,9 +1,7 @@
 module QuickOpenai
   module Gpt3
     def self.gpt3(prompt, **options)
-      client = OpenAI::Client.new
-
-      response = client.completions(
+      response = QuickOpenai.client.completions(
         parameters: {
           model: "text-davinci-003",
           prompt: prompt,
