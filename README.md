@@ -1,8 +1,6 @@
 # QuickOpenAI
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/quick_openai`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+This gem is a wrapper of [ruby-openai](https://github.com/alexrudall/ruby-openai), providing quick convenience methods for experimenting with OpenAI language and image models.
 
 ## Installation
 
@@ -15,6 +13,13 @@ If bundler is not being used to manage dependencies, install the gem by executin
     $ gem install quick_openai
 
 ## Usage
+
+Make sure you have your OpenAI access token in ENV, and then require QuickOpenAI to include String extensions.
+```ruby
+ENV['OPENAI_ACCESS_TOKEN'] = '12345'
+
+require 'quick_openai'
+```
 
 Quickly get results from GPT3:
 
@@ -40,7 +45,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/quick_openai.
+Bug reports and pull requests are welcome on GitHub at https://github.com/aesthetikx/quick_openai.
 
 ## License
 
