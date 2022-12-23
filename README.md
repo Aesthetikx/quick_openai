@@ -15,7 +15,7 @@ Quickly get images from DALLE2:
 
 ```ruby
 "a drawing of a cat in a hat".dalle2.then { |tempfile|
-  File.open('./cat.png', 'wb') { |f| f.puts tempfile.read }
+  File.write('./cat.png', tempfile.read)
 }
 ```
 <img src="https://raw.githubusercontent.com/Aesthetikx/quick_openai/master/.github/cat.png" height=256 width=256></img>
