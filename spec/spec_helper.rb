@@ -2,9 +2,11 @@
 
 require "quick_openai"
 
-require "dotenv/load"
+require "dotenv"
 
 require "vcr"
+
+Dotenv.load(".env.test")
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
