@@ -51,6 +51,8 @@ You can pass options supported by `ruby-openai` to the convenience methods:
 "write me an essay on napoleon".gpt3(max_tokens: 2048) # Produce more or less output. The default is 2048.
 ```
 
+Read more about GPT3 models [here](https://beta.openai.com/docs/models/gpt-3).
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
