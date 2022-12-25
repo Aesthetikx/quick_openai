@@ -8,22 +8,38 @@ require_relative "quick_openai/extensions/string"
 module QuickOpenAI
   class Error < StandardError; end
 
-  def self.client
-    OpenAI::Client.new
-  end
-
-  def self.fetch_response_from_client
-    begin
-      response = yield client
-    rescue StandardError
-      raise QuickOpenAI::Error, "Unable to fetch response."
+  class << self
+    def client
+      OpenAI::Client.new
     end
 
-    if (error = response.dig("error", "message"))
+    def fetch_response_from_client
+      ensure_access_token!
+
+      begin
+        response = yield client
+      rescue StandardError
+        raise QuickOpenAI::Error, "Unable to fetch response."
+      end
+
+      ensure_no_error!(response)
+
+      response
+    end
+
+    private
+
+    def ensure_access_token!
+      return if ENV.key?("OPENAI_ACCESS_TOKEN")
+
+      raise QuickOpenAI::Error, "Make sure OPENAI_ACCESS_TOKEN is present in ENV."
+    end
+
+    def ensure_no_error!(response)
+      return unless (error = response.dig("error", "message"))
+
       raise QuickOpenAI::Error, "Unable to fetch response: #{error}"
     end
-
-    response
   end
 end
 

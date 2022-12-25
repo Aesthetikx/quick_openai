@@ -12,4 +12,10 @@ RSpec.describe QuickOpenAI do
   it "can use dalle2", :vcr do
     expect("a drawing of a cat in a hat".dalle2).to be_a(Tempfile)
   end
+
+  it "returns a useful message without a token present" do
+    allow(ENV).to receive(:key?).with("OPENAI_ACCESS_TOKEN").and_return(false)
+
+    expect { "anything".gpt3 }.to raise_error(QuickOpenAI::Error, /token/i)
+  end
 end
