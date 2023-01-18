@@ -10,7 +10,7 @@ module QuickOpenAI
 
   class << self
     def client
-      OpenAI::Client.new
+      OpenAI::Client.new(access_token: ENV["OPENAI_ACCESS_TOKEN"])
     end
 
     def fetch_response_from_client
