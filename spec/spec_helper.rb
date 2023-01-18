@@ -21,13 +21,13 @@ RSpec.configure do |config|
 end
 
 VCR.configure do |config|
-  config.cassette_library_dir = 'spec/cassettes'
+  config.cassette_library_dir = "spec/cassettes"
   config.hook_into :webmock
   config.configure_rspec_metadata!
 
-  if ENV.key?('OPENAI_ACCESS_TOKEN')
-    config.filter_sensitive_data('<OPENAI_ACCESS_TOKEN>') do
-      ENV.fetch('OPENAI_ACCESS_TOKEN')
+  if ENV.key?("OPENAI_ACCESS_TOKEN")
+    config.filter_sensitive_data("<OPENAI_ACCESS_TOKEN>") do
+      ENV.fetch("OPENAI_ACCESS_TOKEN")
     end
   end
 end
