@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    quick_openai (0.1.1)
+    quick_openai (0.1.2)
       down (~> 5)
       ruby-openai (~> 3)
 
