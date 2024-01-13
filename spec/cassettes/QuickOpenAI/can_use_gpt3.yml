@@ -5,8 +5,8 @@ http_interactions:
     uri: https://api.openai.com/v1/completions
     body:
       encoding: UTF-8
-      string: '{"model":"text-davinci-003","prompt":"What is two plus two, as a single
-        digit?"}'
+      string: '{"model":"gpt-3.5-turbo-instruct","max_tokens":2048,"prompt":"What
+        is two plus two, as a single digit?"}'
     headers:
       Content-Type:
       - application/json
@@ -24,11 +24,11 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 14 Dec 2022 16:17:04 GMT
+      - Sat, 13 Jan 2024 14:52:49 GMT
       Content-Type:
       - application/json
-      Content-Length:
-      - '266'
+      Transfer-Encoding:
+      - chunked
       Connection:
       - keep-alive
       Access-Control-Allow-Origin:
@@ -36,21 +36,64 @@ http_interactions:
       Cache-Control:
       - no-cache, must-revalidate
       Openai-Model:
-      - text-davinci-003
+      - gpt-3.5-turbo-instruct
       Openai-Organization:
       - user-9xiroj1bjfqshv2vkrsqgkpl
       Openai-Processing-Ms:
-      - '470'
+      - '194'
       Openai-Version:
       - '2020-10-01'
       Strict-Transport-Security:
       - max-age=15724800; includeSubDomains
+      X-Ratelimit-Limit-Requests:
+      - '3000'
+      X-Ratelimit-Limit-Tokens:
+      - '250000'
+      X-Ratelimit-Remaining-Requests:
+      - '2999'
+      X-Ratelimit-Remaining-Tokens:
+      - '247951'
+      X-Ratelimit-Reset-Requests:
+      - 20ms
+      X-Ratelimit-Reset-Tokens:
+      - 491ms
       X-Request-Id:
-      - ec96e7753de9086c8246e8b3f551c5e5
+      - 57653e82e84f4c2c84caf4f17749303a
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=.GE8vHXUS7ulWrgKskLkbEqe.evICOPyDAdony0LUuI-1705157569-1-AQmgBdMxV6Cc3KvsDYKCNsSshTgToYslPqa+KRFJA82RNcyLNPG2Or1M+EJPET9U7IBA6nhYteb2pwyPzUSPREA=;
+        path=/; expires=Sat, 13-Jan-24 15:22:49 GMT; domain=.api.openai.com; HttpOnly;
+        Secure; SameSite=None
+      - _cfuvid=SnAvEEO9CF9yE5jXj.WEb1xCFAecvQAmbqh89V_ssDQ-1705157569785-0-604800000;
+        path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 844e77197c9960ad-ORD
+      Alt-Svc:
+      - h3=":443"; ma=86400
     body:
-      encoding: UTF-8
-      string: '{"id":"cmpl-6NOjI0ARnb9uS61EaLAwHvjoeqXO1","object":"text_completion","created":1671034624,"model":"text-davinci-003","choices":[{"text":"\n\n4","index":0,"logprobs":null,"finish_reason":"stop"}],"usage":{"prompt_tokens":11,"completion_tokens":3,"total_tokens":14}}
-
-        '
-  recorded_at: Wed, 14 Dec 2022 16:17:04 GMT
-recorded_with: VCR 6.1.0
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "id": "cmpl-8gZfNak4mEEs5HJn5Af0WMQFO1eB4",
+          "object": "text_completion",
+          "created": 1705157569,
+          "model": "gpt-3.5-turbo-instruct",
+          "choices": [
+            {
+              "text": "\n\n4",
+              "index": 0,
+              "logprobs": null,
+              "finish_reason": "stop"
+            }
+          ],
+          "usage": {
+            "prompt_tokens": 11,
+            "completion_tokens": 2,
+            "total_tokens": 13
+          }
+        }
+  recorded_at: Sat, 13 Jan 2024 14:52:49 GMT
+recorded_with: VCR 6.2.0

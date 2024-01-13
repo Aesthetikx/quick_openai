@@ -4,7 +4,7 @@ module QuickOpenAI
   module Gpt3
     def self.gpt3(prompt, **options)
       parameters = {
-        model: "text-davinci-003",
+        model: "gpt-3.5-turbo-instruct",
         max_tokens: 2048,
         prompt: prompt,
         **options
