@@ -11,10 +11,13 @@ GEM
     addressable (2.8.1)
       public_suffix (>= 2.0.2, < 6.0)
     ast (2.4.2)
+    crack (0.4.5)
+      rexml
     diff-lcs (1.5.0)
     dotenv (2.8.1)
     down (5.4.0)
       addressable (~> 2.8)
+    hashdiff (1.1.0)
     httparty (0.21.0)
       mini_mime (>= 1.0.0)
       multi_xml (>= 0.5.2)
@@ -59,8 +62,13 @@ GEM
     ruby-progressbar (1.11.0)
     unicode-display_width (2.3.0)
     vcr (6.1.0)
+    webmock (3.19.1)
+      addressable (>= 2.8.0)
+      crack (>= 0.3.2)
+      hashdiff (>= 0.4.0, < 2.0.0)
 
 PLATFORMS
+  x86_64-freebsd-13
   x86_64-linux
 
 DEPENDENCIES
@@ -70,6 +78,7 @@ DEPENDENCIES
   rspec (~> 3.0)
   rubocop (~> 1.21)
   vcr (~> 6)
+  webmock (~> 3)
 
 BUNDLED WITH
    2.3.12
