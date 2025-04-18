@@ -4,17 +4,17 @@ This gem is a wrapper of [ruby-openai](https://github.com/alexrudall/ruby-openai
 
 ## Usage
 
-Quickly get results from GPT3:
+Quickly get results from GPT:
 
 ```ruby
-puts "Hello, what is your name?".gpt3
+puts "Hello, what is your name?".gpt
 # => My name is Aileen.
 ```
 
-Quickly get images from DALLE2:
+Quickly get images from DALLE:
 
 ```ruby
-"a drawing of a cat in a hat".dalle2.then { |tempfile|
+"a drawing of a cat in a hat".dalle.then { |tempfile|
   File.write('./cat.png', tempfile.read)
 }
 ```
@@ -44,14 +44,14 @@ require 'quick_openai'
 You can pass options supported by `ruby-openai` to the convenience methods:
 
 ```ruby
-"a drawing of a cat in a hat".dalle2(n: 2) # => An array of two tempfiles
+"a drawing of a cat in a hat".dalle(n: 2) # => An array of two tempfiles
 
-"count to ten in italian".gpt3(model: 'text-ada-001') # Use a different model
+"count to ten in italian".gpt(model: 'gpt-4.5-preview') # Use a different model
 
-"write me an essay on napoleon".gpt3(max_tokens: 2048) # Produce more or less output. The default is 2048.
+"write me an essay on napoleon".gpt(max_tokens: 2048) # Produce more or less output. The default is 2048.
 ```
 
-Read more about GPT3 models [here](https://beta.openai.com/docs/models/gpt-3).
+Read more about GPT models [here](https://beta.openai.com/docs/models/gpt-3).
 
 ## Development
 

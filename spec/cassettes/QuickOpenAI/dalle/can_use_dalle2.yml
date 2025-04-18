@@ -1,0 +1,128 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/images/generations
+    body:
+      encoding: UTF-8
+      string: '{"prompt":"a drawing of a cat in a hat"}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer <OPENAI_ACCESS_TOKEN>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 18 Apr 2025 14:30:55 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Openai-Version:
+      - '2020-10-01'
+      Openai-Organization:
+      - user-9xiroj1bjfqshv2vkrsqgkpl
+      X-Request-Id:
+      - req_31a5a27255d319f1c13ba2b2e5799889
+      Openai-Processing-Ms:
+      - '12293'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=4NbavonBfHm.RHl7Seh3wJd97h_yqgnYqsmPmv3DAGY-1744986655-1.0.1.1-CfffbL_rmnccW4h9SOJYH6UGEGCCkISOLLBuAde5MOlQ7AJ2KMGTK5h6mvOtchLrQt4rHRHx75MtMwoZE4pQGeFgThekCiltUd73ZkOjZZA;
+        path=/; expires=Fri, 18-Apr-25 15:00:55 GMT; domain=.api.openai.com; HttpOnly;
+        Secure; SameSite=None
+      - _cfuvid=uc0tDm7h42KucqFNYt2Z1ZcouZcMmzB8uE.Y6.30BDk-1744986655007-0.0.1.1-604800000;
+        path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 9324dc947b63a936-DTW
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "created": 1744986654,
+          "data": [
+            {
+              "url": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-L0q8eVVtrjVtKqRH8ai3Ii3i/user-9xirOj1BJFqsHV2vKrsQGkPl/img-DGcM9tiuzdqYsawQ9acI46TH.png?st=2025-04-18T13%3A30%3A54Z&se=2025-04-18T15%3A30%3A54Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=8b33a531-2df9-46a3-bc02-d4b1430a422c&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-04-18T06%3A34%3A06Z&ske=2025-04-19T06%3A34%3A06Z&sks=b&skv=2024-08-04&sig=%2BbyW%2BixVw3v5ph90MRD9dvfumVk9sGTEm50jJco%2BG8E%3D"
+            }
+          ]
+        }
+  recorded_at: Fri, 18 Apr 2025 14:30:55 GMT
+- request:
+    method: get
+    uri: https://oaidalleapiprodscus.blob.core.windows.net/private/org-L0q8eVVtrjVtKqRH8ai3Ii3i/user-9xirOj1BJFqsHV2vKrsQGkPl/img-DGcM9tiuzdqYsawQ9acI46TH.png?rscd=inline&rsct=image/png&se=2025-04-18T15:30:54Z&sig=%2BbyW%2BixVw3v5ph90MRD9dvfumVk9sGTEm50jJco%2BG8E=&ske=2025-04-19T06:34:06Z&skoid=8b33a531-2df9-46a3-bc02-d4b1430a422c&sks=b&skt=2025-04-18T06:34:06Z&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skv=2024-08-04&sp=r&sr=b&st=2025-04-18T13:30:54Z&sv=2024-08-04
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Down/5.4.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '3148011'
+      Content-Type:
+      - image/png
+      Content-Md5:
+      - QXKTbnoapWrjlOK2wSk5sQ==
+      Last-Modified:
+      - Fri, 18 Apr 2025 14:30:54 GMT
+      Accept-Ranges:
+      - bytes
+      Etag:
+      - '"0x8DD7E85A0C70540"'
+      Server:
+      - Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0
+      X-Ms-Request-Id:
+      - 0e3f6e91-101e-00bd-696e-b03630000000
+      X-Ms-Version:
+      - '2024-08-04'
+      X-Ms-Creation-Time:
+      - Fri, 18 Apr 2025 14:30:54 GMT
+      X-Ms-Lease-Status:
+      - unlocked
+      X-Ms-Lease-State:
+      - available
+      X-Ms-Blob-Type:
+      - BlockBlob
+      Content-Disposition:
+      - inline
+      X-Ms-Server-Encrypted:
+      - 'true'
+      X-Ms-Last-Access-Time:
+      - Fri, 18 Apr 2025 14:30:54 GMT
+      Date:
+      - Fri, 18 Apr 2025 14:30:54 GMT
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        <a binary image of a cat in a hat>
+  recorded_at: Fri, 18 Apr 2025 14:31:02 GMT
+recorded_with: VCR 6.3.1
