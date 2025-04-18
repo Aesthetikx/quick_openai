@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
   spec.description = "Provides monkey patches for quick usage of GPT3 and DALLE2"
   spec.homepage = "https://github.com/Aesthetikx/quick_openai"
   spec.license = "MIT"
-  spec.required_ruby_version = ">= 2.7.0"
+  spec.required_ruby_version = ">= 3.2"
 
   spec.metadata["homepage_uri"] = spec.homepage
   spec.metadata["source_code_uri"] = "https://github.com/Aesthetikx/quick_openai"
@@ -29,6 +29,9 @@ Gem::Specification.new do |spec|
   spec.executables = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
+  spec.add_dependency "base64"
+  spec.add_dependency "bigdecimal"
+  spec.add_dependency "csv"
   spec.add_dependency "down", "~> 5"
   spec.add_dependency "ruby-openai", "~> 3"
 
