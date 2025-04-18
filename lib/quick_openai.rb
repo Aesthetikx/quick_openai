@@ -10,7 +10,7 @@ module QuickOpenAI
 
   class << self
     def client
-      OpenAI::Client.new(access_token: ENV.fetch("OPENAI_ACCESS_TOKEN"))
+      OpenAI::Client.new(access_token:)
     end
 
     def fetch_response_from_client
@@ -39,6 +39,10 @@ module QuickOpenAI
       return unless (error = response.dig("error", "message"))
 
       raise QuickOpenAI::Error, "Unable to fetch response: #{error}"
+    end
+
+    def access_token
+      ENV.fetch("OPENAI_ACCESS_TOKEN")
     end
   end
 end
