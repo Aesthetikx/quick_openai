@@ -3,12 +3,12 @@
 module QuickOpenAI
   module Extensions
     module String
-      def gpt3(**options)
-        QuickOpenAI::Gpt3.gpt3(self, **options)
+      def gpt3(**)
+        QuickOpenAI::Gpt3.gpt3(self, **)
       end
 
-      def dalle2(**options)
-        QuickOpenAI::Dalle2.dalle2(self, **options)
+      def dalle2(**)
+        QuickOpenAI::Dalle2.dalle2(self, **)
       end
     end
   end

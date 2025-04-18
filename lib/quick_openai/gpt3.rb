@@ -6,12 +6,12 @@ module QuickOpenAI
       parameters = {
         model: "gpt-3.5-turbo-instruct",
         max_tokens: 2048,
-        prompt: prompt,
+        prompt:,
         **options
       }
 
       response = QuickOpenAI.fetch_response_from_client do |client|
-        client.completions(parameters: parameters)
+        client.completions(parameters:)
       end
 
       text = response.dig("choices", 0, "text")

@@ -4,12 +4,12 @@ module QuickOpenAI
   module Dalle2
     def self.dalle2(prompt, **options)
       parameters = {
-        prompt: prompt,
+        prompt:,
         **options
       }
 
       response = QuickOpenAI.fetch_response_from_client do |client|
-        client.images.generate(parameters: parameters)
+        client.images.generate(parameters:)
       end
 
       results = response.fetch("data")
