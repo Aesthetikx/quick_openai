@@ -30,11 +30,8 @@ Gem::Specification.new do |spec|
   spec.executables = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  spec.add_dependency "base64"
-  spec.add_dependency "bigdecimal"
-  spec.add_dependency "csv"
   spec.add_dependency "down", "~> 5"
-  spec.add_dependency "ruby-openai", "~> 3"
+  spec.add_dependency "ruby-openai", "~> 8"
 
   # For more information and examples about making a new gem, check out our
   # guide at: https://bundler.io/guides/creating_gem.html
